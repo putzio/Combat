@@ -9100,8 +9100,8 @@ general purpose rectifier, 1 A</description>
 <part name="X2" library="con-phoenix-500" library_urn="urn:adsk.eagle:library:175" deviceset="MSTBV2" device="" package3d_urn="urn:adsk.eagle:package:9455/1"/>
 <part name="X3" library="con-phoenix-500" library_urn="urn:adsk.eagle:library:175" deviceset="MSTBV2" device="" package3d_urn="urn:adsk.eagle:package:9455/1"/>
 <part name="IC3" library="burr-brown" library_urn="urn:adsk.eagle:library:111" deviceset="REG1117" device="" package3d_urn="urn:adsk.eagle:package:4940/1"/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:23643/1"/>
-<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:23643/1"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2"/>
+<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -9141,12 +9141,12 @@ RP2040), short this pin low.</text>
 <frame x1="-53.34" y1="17.78" x2="215.9" y2="180.34" columns="8" rows="5" layer="97"/>
 </plain>
 <instances>
-<instance part="X1" gate="-1" x="-27.94" y="147.32" smashed="yes" grouprefs="V_IN">
-<attribute name="NAME" x="-34.544" y="148.209" size="1.778" layer="95" rot="R180"/>
+<instance part="X1" gate="-1" x="-27.94" y="142.24" smashed="yes" grouprefs="V_IN">
+<attribute name="NAME" x="-34.544" y="143.129" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="X1" gate="-2" x="-27.94" y="142.24" smashed="yes" grouprefs="V_IN">
-<attribute name="VALUE" x="-35.56" y="138.43" size="1.778" layer="96"/>
-<attribute name="NAME" x="-34.798" y="143.129" size="1.778" layer="95" rot="R180"/>
+<instance part="X1" gate="-2" x="-27.94" y="147.32" smashed="yes" grouprefs="V_IN">
+<attribute name="VALUE" x="-35.56" y="143.51" size="1.778" layer="96"/>
+<attribute name="NAME" x="-34.798" y="148.209" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="U$1" gate="G$1" x="129.54" y="129.54" smashed="yes" grouprefs="RP_PICO">
 <attribute name="NAME" x="129.54" y="160.02" size="2.54" layer="95" align="center"/>
@@ -9257,11 +9257,11 @@ RP2040), short this pin low.</text>
 <instance part="GND9" gate="1" x="25.4" y="33.02" smashed="yes" grouprefs="RADIO_RECIVER">
 <attribute name="VALUE" x="22.86" y="30.48" size="1.778" layer="96"/>
 </instance>
-<instance part="P+6" gate="1" x="48.26" y="68.58" smashed="yes" grouprefs="RADIO_RECIVER">
-<attribute name="VALUE" x="45.72" y="66.04" size="1.778" layer="96" rot="R90"/>
+<instance part="P+6" gate="1" x="60.96" y="68.58" smashed="yes" grouprefs="RADIO_RECIVER">
+<attribute name="VALUE" x="58.42" y="66.04" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND10" gate="1" x="55.88" y="66.04" smashed="yes" grouprefs="RADIO_RECIVER">
-<attribute name="VALUE" x="53.34" y="63.5" size="1.778" layer="96"/>
+<instance part="GND10" gate="1" x="50.8" y="63.5" smashed="yes" grouprefs="RADIO_RECIVER">
+<attribute name="VALUE" x="48.26" y="60.96" size="1.778" layer="96"/>
 </instance>
 <instance part="X4" gate="-1" x="-27.94" y="63.5" smashed="yes" grouprefs="DC_MOTOR_ARM">
 <attribute name="NAME" x="-34.544" y="64.389" size="1.778" layer="95" rot="R180"/>
@@ -9294,12 +9294,6 @@ RP2040), short this pin low.</text>
 <nets>
 <net name="V+" class="0">
 <segment>
-<pinref part="X1" gate="-1" pin="SK"/>
-<pinref part="P+1" gate="1" pin="V+"/>
-<wire x1="-20.32" y1="147.32" x2="-15.24" y2="147.32" width="0.1524" layer="91" grouprefs="V_IN"/>
-<wire x1="-15.24" y1="147.32" x2="-15.24" y2="157.48" width="0.1524" layer="91" grouprefs="V_IN"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="G$1" pin="VMOT"/>
 <pinref part="P+2" gate="1" pin="V+"/>
 <wire x1="22.86" y1="93.98" x2="7.62" y2="93.98" width="0.1524" layer="91" grouprefs="MOSTEK_H"/>
@@ -9321,13 +9315,19 @@ RP2040), short this pin low.</text>
 <pinref part="D1" gate="1" pin="C"/>
 <junction x="-12.7" y="63.5"/>
 </segment>
+<segment>
+<pinref part="P+1" gate="1" pin="V+"/>
+<wire x1="-15.24" y1="147.32" x2="-15.24" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-2" pin="SK"/>
+<wire x1="-20.32" y1="147.32" x2="-15.24" y2="147.32" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="X1" gate="-2" pin="SK"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="-20.32" y1="142.24" x2="-15.24" y2="142.24" width="0.1524" layer="91" grouprefs="V_IN"/>
 <wire x1="-15.24" y1="142.24" x2="-15.24" y2="134.62" width="0.1524" layer="91" grouprefs="V_IN"/>
+<pinref part="X1" gate="-1" pin="SK"/>
+<wire x1="-20.32" y1="142.24" x2="-15.24" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="GND@2"/>
@@ -9379,16 +9379,16 @@ RP2040), short this pin low.</text>
 <pinref part="GND9" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="60.96" y1="68.58" x2="55.88" y2="68.58" width="0.1524" layer="91" grouprefs="RADIO_RECIVER"/>
-<pinref part="JP1" gate="A" pin="1"/>
-<wire x1="68.58" y1="63.5" x2="60.96" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="63.5" x2="60.96" y2="68.58" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <wire x1="-12.7" y1="43.18" x2="-12.7" y2="35.56" width="0.1524" layer="91" grouprefs="DC_MOTOR_ARM"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <pinref part="U$2" gate="G$1" pin="S"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="A" pin="2"/>
+<wire x1="68.58" y1="60.96" x2="55.88" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="60.96" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="GND10" gate="1" pin="GND"/>
+<wire x1="55.88" y1="66.04" x2="50.8" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -9496,9 +9496,9 @@ RP2040), short this pin low.</text>
 <pinref part="IC1" gate="G$1" pin="AO1"/>
 </segment>
 <segment>
-<pinref part="X2" gate="-2" pin="SK"/>
-<wire x1="-20.32" y1="111.76" x2="-15.24" y2="111.76" width="0.1524" layer="91"/>
-<label x="-15.24" y="111.76" size="1.778" layer="95" xref="yes"/>
+<wire x1="-20.32" y1="116.84" x2="-15.24" y2="116.84" width="0.1524" layer="91"/>
+<label x="-15.24" y="116.84" size="1.4224" layer="95" xref="yes"/>
+<pinref part="X2" gate="-1" pin="SK"/>
 </segment>
 </net>
 <net name="AO2" class="0">
@@ -9508,33 +9508,33 @@ RP2040), short this pin low.</text>
 <pinref part="IC1" gate="G$1" pin="AO2"/>
 </segment>
 <segment>
-<wire x1="-20.32" y1="116.84" x2="-15.24" y2="116.84" width="0.1524" layer="91"/>
-<label x="-15.24" y="116.84" size="1.4224" layer="95" xref="yes"/>
-<pinref part="X2" gate="-1" pin="SK"/>
+<pinref part="X2" gate="-2" pin="SK"/>
+<wire x1="-20.32" y1="111.76" x2="-15.24" y2="111.76" width="0.1524" layer="91"/>
+<label x="-15.24" y="111.76" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BO1" class="0">
-<segment>
-<pinref part="X3" gate="-1" pin="SK"/>
-<wire x1="-20.32" y1="88.9" x2="-15.24" y2="88.9" width="0.1524" layer="91" grouprefs="DC_DRIVE_OUT"/>
-<label x="-15.24" y="88.9" size="1.4224" layer="95" xref="yes" grouprefs="DC_DRIVE_OUT"/>
-</segment>
 <segment>
 <wire x1="22.86" y1="96.52" x2="17.78" y2="96.52" width="0.1524" layer="91" grouprefs="MOSTEK_H"/>
 <label x="17.78" y="96.52" size="1.4224" layer="95" rot="R180" xref="yes" grouprefs="MOSTEK_H"/>
 <pinref part="IC1" gate="G$1" pin="BO1"/>
 </segment>
-</net>
-<net name="BO2" class="0">
 <segment>
 <pinref part="X3" gate="-2" pin="SK"/>
 <wire x1="-20.32" y1="83.82" x2="-15.24" y2="83.82" width="0.1524" layer="91" grouprefs="DC_DRIVE_OUT"/>
-<label x="-15.24" y="83.82" size="1.4224" layer="95" xref="yes" grouprefs="DC_DRIVE_OUT"/>
+<label x="-15.24" y="83.82" size="1.778" layer="95" xref="yes"/>
 </segment>
+</net>
+<net name="BO2" class="0">
 <segment>
 <wire x1="22.86" y1="99.06" x2="17.78" y2="99.06" width="0.1524" layer="91" grouprefs="MOSTEK_H"/>
 <label x="17.78" y="99.06" size="1.4224" layer="95" rot="R180" xref="yes" grouprefs="MOSTEK_H"/>
 <pinref part="IC1" gate="G$1" pin="BO2"/>
+</segment>
+<segment>
+<pinref part="X3" gate="-1" pin="SK"/>
+<wire x1="-20.32" y1="88.9" x2="-15.24" y2="88.9" width="0.1524" layer="91" grouprefs="DC_DRIVE_OUT"/>
+<label x="-15.24" y="88.9" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -9558,10 +9558,10 @@ RP2040), short this pin low.</text>
 <junction x="154.94" y="152.4" grouprefs="RP_PICO"/>
 </segment>
 <segment>
+<pinref part="JP1" gate="A" pin="1"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
-<pinref part="JP1" gate="A" pin="2"/>
-<wire x1="68.58" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="60.96" x2="48.26" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="63.5" x2="60.96" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="63.5" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RADIO_CH1" class="0">
@@ -9629,6 +9629,11 @@ RP2040), short this pin low.</text>
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="48.26" y1="58.42" x2="68.58" y2="58.42" width="0.1524" layer="91" grouprefs="RADIO_RECIVER"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GP9"/>
+<wire x1="109.22" y1="127" x2="104.14" y2="127" width="0.1524" layer="91"/>
+<label x="104.14" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -9636,12 +9641,22 @@ RP2040), short this pin low.</text>
 <pinref part="JP1" gate="A" pin="4"/>
 <wire x1="45.72" y1="55.88" x2="68.58" y2="55.88" width="0.1524" layer="91" grouprefs="RADIO_RECIVER"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GP8"/>
+<wire x1="109.22" y1="129.54" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
+<label x="99.06" y="129.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="5"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="68.58" y1="53.34" x2="43.18" y2="53.34" width="0.1524" layer="91" grouprefs="RADIO_RECIVER"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GP7"/>
+<wire x1="109.22" y1="132.08" x2="106.68" y2="132.08" width="0.1524" layer="91"/>
+<label x="106.68" y="132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$4" class="0">
